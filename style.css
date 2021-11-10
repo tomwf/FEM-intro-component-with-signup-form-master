@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+/**********  Primary **********/
+
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+
+/**********  accent **********/
+
+  --blue: hsl(248, 32%, 49%);
+
+/**********  neutral **********/
+
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--red) url('images/bg-intro-mobile.png') no-repeat center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+main {
+  padding: 3em 2em;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: auto;
+}
+
+.description {
+  margin-bottom: 3em;
+}
+
+.description > h2 {
+  margin-bottom: 1em;
+}
+
+.cta {
+  background-color: var(--blue);
+  border-radius: 8px;
+  padding: 1.25em;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .125);
+  margin-bottom: 1.5em;
+}
+
+main form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5em;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .125);
+}
+
+.is-empty {
+  outline: 2px solid var(--red);
+}
+
+main form div {
+  position: relative;
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+main form div > span {
+  color: var(--red);
+  font-size: .75rem;
+}
+
+main form div > img {
+  position: absolute;
+  right: 1em;
+  top: 26px;
+  transform: translateY(-50%);
+}
+
+:focus {
+  outline: 1px solid var(--blue);
+}
+
+main form input {
+  padding: 1.25em;
+  width: 100%;
+  font-weight: 600;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.email-not-valid {
+  color: var(--red);
+}
+
+#email::placeholder {
+  color: initial;
+}
+
+#submitBtn {
+  cursor: pointer;
+  background-color: var(--green);
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 0 rgb(56, 185, 126);
+}
+
+#submitBtn:active {
+  filter: brightness(1.1);
+}
+
+form > span {
+  display: inline-block;
+  color: var(--grayish-blue);
+  font-size: .6rem;
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+}
+
+form > span > a {
+  color: var(--red);
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    background: var(--red) url('images/bg-intro-desktop.png') no-repeat center;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+  }
+
+  .description {
+    text-align: left;
+    padding-right: 3em;
+  }
+
+  .description > h2 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+    margin-bottom: .5em;
+  }
+
+  main form {
+    min-width: 300px;
+    max-width: 400px;
+    width: 35vw;
+  }
+}
