@@ -66,10 +66,11 @@ document.addEventListener('keyup', (evt) => {
   const deleteElement = (parentElement, targetElement) => {
       parentElement.removeChild(parentElement.getElementsByTagName(targetElement)[0])
     }
-  const removeEmptyError = (element) => {
+  const removeEmptyError = element => {
     deleteElement(element.parentNode, 'span');
     deleteElement(element.parentNode, 'img');
   }
+  const hasErrorMsg = element => element.parentNode.querySelector('span');
   const element = evt.target;
 
   if (element.localName === 'input') {
@@ -107,12 +108,12 @@ document.addEventListener('keyup', (evt) => {
           }
 
           if (element.value.match(emailPattern)) {
-            if (!element.parentNode.querySelector('span')) {
+            if (!hasErrorMsg) {
               return
             }
             removeEmailError(element);
           } else {
-            if (element.parentNode.querySelector('span')) {
+            if (hasErrorMsg) {
               if (element.value.length === '') {
                 removeEmailError(element);
               }
